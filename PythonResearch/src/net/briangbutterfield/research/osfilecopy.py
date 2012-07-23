@@ -17,15 +17,15 @@ def doCopy():
     global entryWidget
     global statusWidget
     
-    srcPath = "P:\\APmax Pre-Release Packages\\Services"
-    destPath = "Q:\\Install\\APMAX\\Packages\\temp"
-    readMeFilePath = "Q:\\Install\\APMAX\\Packages\\temp\\ReadMe.txt"
+    srcPath = "c:\\temp\\src"
+    destPath = "c:\\temp\\dest"
+    readMeFilePath = "c:\\temp\\dest\\ReadMe.txt"
     
     #prompt for file selection
     options = {}
     options['title'] = "Select APEX Files"
     options['initialdir'] = srcPath
-    options['filetypes'] = [("apexfiles",".apex")]
+    options['filetypes'] = [("txt files",".txt")]
     selectedFiles = askopenfilenames(**options)
     
     #split selected files string into a list
@@ -37,7 +37,7 @@ def doCopy():
     if deleteFiles == "yes":
         for filename in os.listdir(destPath):
             deleteFile = os.path.join(destPath, filename)
-            if deleteFile.endswith(".apex"):
+            if deleteFile.endswith(".txt"):
                 os.remove(deleteFile)
                 statusWidget.insert(END, "\n" + "  Deleted File: " + filename)
                 root.update_idletasks()
