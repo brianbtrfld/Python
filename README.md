@@ -1,4 +1,4 @@
 Python
 ======
 
-Python Research and Proof of Concepts
+Research and Proof of Concepts
